@@ -1,9 +1,9 @@
 apiVersion: apps/v1           
 kind: Template  
 metadata:
-  name: chat-server 
+ 	name: chat-server 
 	apiVersion: apps/v1           
-	kind: DeploymentConfig              
+	kind: Deployment              
 	metadata:
 	  name: chat-server           
 	  labels:                     
@@ -15,8 +15,7 @@ metadata:
 	    - type: ImageChange
 	      imageChangeParams:
 	        automatic: true
-	        containerNames:
-	          - chat-server
+	        containerNames: chat-server
 	        from:
 	          kind: ImageStreamTag
 	          name: chat-server:latest                
